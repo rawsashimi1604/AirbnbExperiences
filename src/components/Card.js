@@ -1,9 +1,8 @@
 import React from "react"
-import cardImg from "../images/card1.png"
 import { FaStar } from "react-icons/fa"
 
 
-export default function Card() {
+export default function Card(props) {
 
     const iconStyle = {
         color: "red",
@@ -13,23 +12,23 @@ export default function Card() {
 
     return (
         <section className="card">
-            <img src={cardImg}></img>
+            <img src={props.img}></img>
             
-            <span className="card-status">SOLD OUT</span>
+            <span className="card-status">{props.status}</span>
 
             <div className="card-subtitle">
                 <FaStar style={iconStyle}/>
-                <span className="card-rating">5.0</span>
-                <span className="card-reviews gray">(6) . </span>
-                <span className="card-country gray">USA</span>
+                <span className="card-rating">{props.rating}</span>
+                <span className="card-reviews gray">({props.reviewCount}) . </span>
+                <span className="card-country gray">{props.country}</span>
             </div>
 
             <span className="card-title">
-                Life lessons with Katie Zaferes
+                {props.title}
             </span>
 
             <div className="card-price">
-                <span className="card-dollars-price">From $136</span> / person
+                <span className="card-dollars-price">From ${props.price}</span> / person
             </div>
         </section>
     )

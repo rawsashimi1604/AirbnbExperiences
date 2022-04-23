@@ -3,16 +3,14 @@ import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import Card from "./components/Card"
 
-import card1 from "./images/card1.png"
-
-
 export default function App() {
+
     return (
         <div className="container">
             <Navbar/>
             <Hero/>
             <Card
-                img = {card1}
+                img = "./images/card1.png"
                 status = "SOLD OUT"
                 rating = "5.0"
                 reviewCount = {6}
@@ -20,8 +18,6 @@ export default function App() {
                 title = "Life Lessons with Katie Zafares"
                 price = {136}
             />
-
-
         </div>
     )
 }

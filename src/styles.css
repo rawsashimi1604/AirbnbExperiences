@@ -28,7 +28,7 @@ body {
 
 
 .hero img {
-    width: 600px;
+    width: 450px;
     align-self: center;
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 .card {
-    max-width: 40%;
+    max-width: 60%;
     position: relative;
     margin: 10px;
 }

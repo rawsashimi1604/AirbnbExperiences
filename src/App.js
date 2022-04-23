@@ -3,21 +3,31 @@ import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import Card from "./components/Card"
 
+import data from "./data"
+
 export default function App() {
+    const myData = data.map(element => {
+        return (
+            <Card
+                img = {`./images/${element.coverImg}`}
+                status = "SOLD OUT"
+                rating = {element.stats.rating}
+                reviewCount = {element.stats.reviewCount}
+                country = {element.location}
+                title = {element.title}
+                price = {element.price}
+            />
+        )
+    })
 
     return (
         <div className="container">
             <Navbar/>
             <Hero/>
-            <Card
-                img = "./images/card1.png"
-                status = "SOLD OUT"
-                rating = "5.0"
-                reviewCount = {6}
-                country = "USA"
-                title = "Life Lessons with Katie Zafares"
-                price = {136}
-            />
+            <section className="cards">
+                {myData}
+            </section>
+            
         </div>
     )
 }

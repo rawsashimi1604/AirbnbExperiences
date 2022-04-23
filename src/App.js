@@ -10,7 +10,7 @@ export default function App() {
         return (
             <Card
                 img = {`./images/${element.coverImg}`}
-                status = "SOLD OUT"
+                status = {(element.openSpots) ? "AVAILABLE" : "SOLD OUT"}
                 rating = {element.stats.rating}
                 reviewCount = {element.stats.reviewCount}
                 country = {element.location}
